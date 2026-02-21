@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Portfolio | Creative & Marketing",
-  description: "Hybrid creative and marketing, built to iklipse the noise. Smart creative backed by AI.",
+  description:
+    "Hybrid creative and marketing, built to iklipse the noise. Smart creative backed by AI.",
 };
 
 export default function RootLayout({
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light" data-theme="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
