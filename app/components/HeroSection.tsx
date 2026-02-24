@@ -6,6 +6,9 @@ import Link from "next/link";
 import VerticalCarousel from "./VerticalCarousel";
 import BookCallButton from "./UnderLineButton";
 import { ShaderGradient, ShaderGradientCanvas } from "@shadergradient/react";
+import PixelBlast from "@/components/PixelBlast";
+import GradientBlinds from "@/components/GradientBlinds";
+import RotatingText from "./RotatingText";
 
 const CAROUSEL_IMAGES = [
   "/hero-carousel/0.png",
@@ -36,7 +39,7 @@ export function HeroSection() {
 
   useEffect(() => {
     if (!mounted) return;
-    document.documentElement.classList.toggle("dark", isDark);
+    document.documentElement.classList.toggle("light", isDark);
   }, [isDark, mounted]);
 
   useEffect(() => {
@@ -52,10 +55,13 @@ export function HeroSection() {
     : ["/hero-carousel/0.png"];
 
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden ">
+    <section className="relative min-h-[90vh] w-full overflow-hidden">
       {/* Blue stripe accent on the right */}
 
       {/* Shader Gradient Background */}
+      <div className="absolute inset-0 z-1">
+        <div style={{ width: "100%", height: "100%" }}></div>
+      </div>
 
       <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col  lg:flex-row lg:items-center lg:justify-between z-10">
         {/* Left: Headline, paragraph, CTAs */}
@@ -64,10 +70,13 @@ export function HeroSection() {
             Hybrid creative
             <br />
             and marketing,
-            <br />
-            built to <span className="text-[#F25C4D]">iklipse</span>
-            <br />
-            the noise.
+            <span className="flex gap-2 mt-4 ">
+              <h1>Create</h1>
+              <RotatingText
+                mainClassName="bg-[#F25C4D]! p-2 rounded-md text-white ml-2"
+                texts={["the noise.", "the clutter.", "the confusion."]}
+              />
+            </span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-xl">
             We work with fast-growing SMEs and big names alike to build brands,
@@ -81,14 +90,7 @@ export function HeroSection() {
             >
               Get Started
             </Link>
-            <button
-              type="button"
-              onClick={() => setIsDark((d) => !d)}
-              className="inline-flex items-center justify-center rounded-lg border-2 border-black bg-white px-5 py-3 text-base font-medium text-black transition hover:bg-zinc-100 dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-zinc-800"
-              aria-label="Toggle dark mode"
-            >
-              Lights Off
-            </button>
+
             <Link href="#about" className="inline-flex ">
               <BookCallButton
                 className="!text-black dark:!text-white  "

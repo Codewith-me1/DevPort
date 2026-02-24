@@ -1,6 +1,9 @@
-export function ContactSection() {
+function ContactSection() {
   return (
-    <section id="contact" className="border-t border-zinc-200 bg-zinc-50 px-6 py-16 dark:border-zinc-800 dark:bg-zinc-900/50 sm:py-20 lg:px-10">
+    <section
+      id="contact"
+      className="border-t border-zinc-200 bg-zinc-50 px-6 py-16 dark:border-zinc-800 dark:bg-zinc-900/50 sm:py-20 lg:px-10"
+    >
       <div className="mx-auto max-w-7xl text-center">
         <h2 className="text-2xl font-bold text-black dark:text-white sm:text-3xl">
           Get in touch
@@ -18,3 +21,5 @@ export function ContactSection() {
     </section>
   );
 }
+
+export default ContactSection;

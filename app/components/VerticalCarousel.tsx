@@ -104,7 +104,7 @@ export default function InfiniteSymmetricCarousel() {
       return {
         zIndex: 50 - Math.abs(diff) * 10,
         transform: `translateY(${diff * 75}px) scale(${1 - Math.abs(diff) * 0.1})`,
-        opacity: 1 - Math.abs(diff) * 0.1,
+        opacity: 1 - Math.abs(diff) * 0,
         filter: `blur(${Math.abs(diff) * 0}px)`,
       };
     }
@@ -114,7 +114,7 @@ export default function InfiniteSymmetricCarousel() {
       return {
         zIndex: 50 - Math.abs(diff) * 10,
         transform: `translateY(${diff * 75}px) scale(${1 - Math.abs(diff) * 0.1})`,
-        opacity: 1 - Math.abs(diff) * 0.1,
+        opacity: 1 - Math.abs(diff) * 0,
         filter: `blur(${Math.abs(diff) * 0}px)`,
       };
     }
