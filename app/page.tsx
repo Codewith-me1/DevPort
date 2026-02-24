@@ -76,17 +76,18 @@ const Skills = dynamic(() => import("./components/Skills"), { ssr: false });
 const ContactSection = dynamic(() => import("./components/ContactSection"), {
   ssr: false,
 });
-
+import SoftGradientBackground from "./components/SoftBackground";
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
 
       {/* HERO ONLY FIRST */}
+
       <section id="home">
-        <FractalGlassGradient>
+        <SoftGradientBackground className="">
           <HeroSection />
-        </FractalGlassGradient>
+        </SoftGradientBackground>
       </section>
 
       {/* LOAD REST ONLY WHEN NEEDED */}
